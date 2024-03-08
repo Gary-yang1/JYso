@@ -152,7 +152,7 @@ public class Config {
     public static String HEADER_KEY = "Referer";
 
     // 用于额外校验的 Http Header 值，默认值 https://QI4L.cn/
-    public static String HEADER_VALUE = "https://www.baidu.cn/";
+    public static String HEADER_VALUE = "https://www.baidu.com/";
 
     // 哥斯拉的 key，默认是 key
     public static String GODZILLA_KEY = "3c6e0b8a9c15224a";
