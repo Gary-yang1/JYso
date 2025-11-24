@@ -8,6 +8,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.Callable;
 
 import static com.qi4l.jndi.gadgets.Config.Config.IS_DIRTY_IN_TC_RESET;
@@ -53,6 +54,14 @@ public class Serializer implements Callable<byte[]> {
     public static void qiserialize4l(Object obj, final OutputStream out) throws Exception {
         final ObjectOutputStream objOut;
         objOut = new CustomObjectOutputStream(out);
+        objOut.writeObject(obj);
+    }
+
+    public static void tongwebSerialize(Object obj, final OutputStream out) throws Exception {
+        final ObjectOutputStream objOut;
+        out.write("OEJP/4.6".getBytes(StandardCharsets.UTF_8));
+        objOut = new ObjectOutputStream(out);
+        objOut.writeByte(1);
         objOut.writeObject(obj);
     }
 

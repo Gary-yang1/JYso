@@ -96,6 +96,7 @@
         <custom.lib-path>${project.basedir}/lib</custom.lib-path>
     </properties>
 
+
     <dependencies>
         <dependency>
             <groupId>io.projectreactor</groupId>
@@ -130,7 +131,7 @@
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
-            <version>3.29.2-GA</version>
+            <version>3.28.0-GA</version>
         </dependency>
 
         <dependency>
@@ -233,6 +234,13 @@
             <groupId>org.jboss.interceptor</groupId>
             <artifactId>jboss-interceptor-core</artifactId>
             <version>2.0.0.Final</version>
+            <exclusions>
+                <!-- 去掉它带进来的老 javassist -->
+                <exclusion>
+                    <groupId>javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jboss.interceptor</groupId>

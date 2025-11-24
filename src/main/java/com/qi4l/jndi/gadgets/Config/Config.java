@@ -208,6 +208,12 @@ public class Config {
     // 不同类型内存马的父类/接口与其关键参数的映射
     public static HashMap<String, String> KEY_METHOD_MAP = new HashMap<>();
 
+    //tongweb数据构造
+    public static Boolean TONGWEB = false;
+
+    //springboot版本
+    public static Boolean SPRINGBOOT3 = false;
+
 
     public static void init() {
         // Servlet 型内存马，关键方法 service

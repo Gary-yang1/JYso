@@ -3,6 +3,7 @@ package com.qi4l.jndi.gadgets;
 import com.qi4l.jndi.enumtypes.PayloadType;
 import com.qi4l.jndi.gadgets.annotation.Authors;
 import com.qi4l.jndi.gadgets.annotation.Dependencies;
+import javassist.bytecode.ClassFile;
 
 import java.lang.reflect.Field;
 import java.net.URL;
