@@ -87,6 +87,7 @@ public class GadgetsYso {
         CtClass ctClass    = null;
         byte[]  classBytes = new byte[0];
         String  newClassName = generateClassName();
+        System.out.println("[+] Generating evil class: " + newClassName);
 
         final Object templates = TPL_CLASS.newInstance();
         POOL.insertClassPath(new ClassClassPath(ABST_TRANSLET));
