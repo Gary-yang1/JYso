@@ -15,6 +15,7 @@ import java.util.List;
 public class GlassHandler {
     public static CtClass generateClass(String target) throws Exception {
         String  newClassName = ClassNameHandler.generateClassName();
+        //System.out.println("[+] Generated Class Name: " + newClassName);
         CtClass ctClass      = generateClass(target, newClassName);
 
         // 如果需要，保存类文件
